@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replit Campus · Admin Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin-body">
+    <div class="bg-layer" aria-hidden="true">
+      <img class="bg-logo bg-logo-admin" src="/assets/replit-logo.svg" alt="" />
+    </div>
+
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="/assets/replit-logo.svg" alt="Replit" />
+          <div>
+            <strong>Replit Campus</strong>
+            <span>Registrar admin</span>
+          </div>
+        </a>
+        <a class="nav-link" href="/">Student form</a>
+      </header>
+
+      <section id="login-view" class="page page-admin">
+        <div class="intro">
+          <p class="eyebrow">Staff only</p>
+          <h1>Sign in to the student log.</h1>
+          <p class="lede">
+            View registered names, emails, and phone numbers. Use the admin
+            credentials shown in the server console.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Admin login</h2>
+            <p class="hint">
+              Use the admin username and password configured in the hosting environment.
+            </p>
+          </div>
+          <form id="login-form" class="stack">
+            <div class="field">
+              <label for="username">Username</label>
+              <input id="username" name="username" autocomplete="username" required />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+            <div class="actions">
+              <button class="primary" type="submit">Log in</button>
+            </div>
+            <p id="login-status" class="status" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="log-view" class="hidden">
+        <div class="intro intro-wide">
+          <p class="eyebrow">Live enrolment</p>
+          <h1>Registered students</h1>
+          <p class="lede">Newest registrations appear first.</p>
+        </div>
+
+        <div class="card card-wide">
+          <div class="admin-toolbar">
+            <input
+              class="search"
+              id="search"
+              type="search"
+              placeholder="Search by name, email, or phone"
+            />
+            <span class="stats" id="stats"></span>
+            <button id="download-pdf" class="ghost-btn" type="button">Download PDF</button>
+            <button id="logout" class="ghost-btn" type="button">Log out</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Registered</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+          <p id="admin-status" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+    <script src="/admin.js"></script>
+  </body>
+</html>

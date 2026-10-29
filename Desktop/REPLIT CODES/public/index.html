@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replit Campus · Student Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true">
+      <img class="bg-logo" src="/assets/replit-logo.svg" alt="" />
+    </div>
+
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="/assets/replit-logo.svg" alt="Replit" />
+          <div>
+            <strong>Replit Campus</strong>
+            <span>Student registration</span>
+          </div>
+        </a>
+        <a class="nav-link" href="/admin.html">Admin log</a>
+      </header>
+
+      <main class="page">
+        <section class="intro">
+          <p class="eyebrow">Enrolment desk</p>
+          <h1>Register with your name, email, and phone.</h1>
+          <p class="lede">
+            Fill in the form once. Your details land in the admin log as soon as
+            you submit.
+          </p>
+          <ol class="steps">
+            <li><span>1</span> Enter your full name</li>
+            <li><span>2</span> Add a working email</li>
+            <li><span>3</span> Include your phone number</li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Student registration</h2>
+            <p class="hint">All three fields are required.</p>
+          </div>
+
+          <form id="register-form" class="stack">
+            <div class="field">
+              <label for="fullName">Full name</label>
+              <input
+                id="fullName"
+                name="fullName"
+                autocomplete="name"
+                placeholder="Ada Lovelace"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="ada@campus.edu"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+1 555 010 2299"
+                required
+              />
+            </div>
+
+            <div class="actions">
+              <button class="primary" type="submit">Register student</button>
+            </div>
+            <p id="status" class="status" role="status"></p>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="/register.js"></script>
+  </body>
+</html>
